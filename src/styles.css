@@ -1,0 +1,301 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * Keep every @import in this top block. Never @import a remote URL; fonts load via <link> in __root.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------- Jayshree Weds Ankit — design system ---------- */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Cormorant Garamond", "Times New Roman", serif;
+  --font-script: "Pinyon Script", "Cormorant Garamond", cursive;
+  --font-hindi: "Tiro Devanagari Hindi", "Noto Serif Devanagari", serif;
+  --font-caps: "Cinzel", "Cormorant Garamond", serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-lavender: var(--lavender);
+  --color-lilac: var(--lilac);
+  --color-blush: var(--blush);
+  --color-pearl: var(--pearl);
+  --color-plum: var(--plum);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Ivory, pearl and pastel lavender */
+  --background: oklch(0.982 0.009 85);
+  --foreground: oklch(0.33 0.065 315);
+  --card: oklch(0.992 0.006 85);
+  --card-foreground: oklch(0.33 0.065 315);
+  --popover: oklch(0.992 0.006 85);
+  --popover-foreground: oklch(0.33 0.065 315);
+  --primary: oklch(0.52 0.11 305);
+  --primary-foreground: oklch(0.985 0.008 85);
+  --secondary: oklch(0.945 0.03 305);
+  --secondary-foreground: oklch(0.36 0.07 310);
+  --muted: oklch(0.962 0.014 300);
+  --muted-foreground: oklch(0.5 0.045 310);
+  --accent: oklch(0.9 0.04 10);
+  --accent-foreground: oklch(0.36 0.07 350);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0.008 85);
+  --border: oklch(0.88 0.035 80);
+  --input: oklch(0.88 0.035 80);
+  --ring: oklch(0.72 0.09 80);
+
+  /* Accents */
+  --gold: oklch(0.76 0.095 80);
+  --gold-deep: oklch(0.6 0.1 70);
+  --gold-soft: oklch(0.9 0.055 85);
+  --gold-foreground: oklch(0.3 0.05 60);
+  --lavender: oklch(0.8 0.075 300);
+  --lilac: oklch(0.89 0.045 310);
+  --blush: oklch(0.88 0.05 12);
+  --pearl: oklch(0.975 0.012 300);
+  --plum: oklch(0.33 0.065 315);
+
+  /* Gradients & shadows */
+  --gradient-pearl: linear-gradient(
+    180deg,
+    oklch(0.985 0.008 85) 0%,
+    oklch(0.965 0.022 305) 55%,
+    oklch(0.975 0.02 12) 100%
+  );
+  --gradient-dusk: radial-gradient(
+    120% 80% at 50% 0%,
+    oklch(0.95 0.04 305) 0%,
+    oklch(0.982 0.009 85) 60%
+  );
+  --gradient-gold: linear-gradient(
+    120deg,
+    oklch(0.68 0.1 70) 0%,
+    oklch(0.86 0.09 88) 35%,
+    oklch(0.72 0.1 75) 60%,
+    oklch(0.88 0.07 90) 100%
+  );
+  --gradient-veil: linear-gradient(
+    180deg,
+    transparent 0%,
+    color-mix(in oklab, var(--background) 85%, transparent) 70%,
+    var(--background) 100%
+  );
+  --shadow-soft: 0 10px 30px -14px color-mix(in oklab, var(--plum) 35%, transparent);
+  --shadow-gold: 0 10px 28px -10px color-mix(in oklab, var(--gold-deep) 60%, transparent);
+  --shadow-glow: 0 0 0 6px color-mix(in oklab, var(--gold) 18%, transparent),
+    0 14px 34px -10px color-mix(in oklab, var(--gold-deep) 55%, transparent);
+
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--lavender) 45%, transparent);
+  }
+}
+
+/* ---------- Utilities ---------- */
+
+@utility bg-pearl {
+  background-image: var(--gradient-pearl);
+}
+@utility bg-dusk {
+  background-image: var(--gradient-dusk);
+}
+@utility bg-gold-gradient {
+  background-image: var(--gradient-gold);
+}
+@utility bg-veil {
+  background-image: var(--gradient-veil);
+}
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+@utility shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+@utility text-gold-gradient {
+  background-image: var(--gradient-gold);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 7s ease-in-out infinite;
+}
+
+/* Subtle silk/paper texture */
+@utility texture-silk {
+  background-image:
+    radial-gradient(circle at 20% 15%, color-mix(in oklab, var(--lilac) 45%, transparent) 0, transparent 40%),
+    radial-gradient(circle at 85% 70%, color-mix(in oklab, var(--blush) 40%, transparent) 0, transparent 45%),
+    repeating-linear-gradient(
+      45deg,
+      color-mix(in oklab, var(--gold) 5%, transparent) 0 1px,
+      transparent 1px 9px
+    );
+}
+
+/* Mughal arch mask for images */
+@utility mask-arch {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300' preserveAspectRatio='none'><path d='M0 300V105C0 62 42 40 72 26C88 18 96 10 100 0C104 10 112 18 128 26C158 40 200 62 200 105V300Z' fill='black'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300' preserveAspectRatio='none'><path d='M0 300V105C0 62 42 40 72 26C88 18 96 10 100 0C104 10 112 18 128 26C158 40 200 62 200 105V300Z' fill='black'/></svg>");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility sway {
+  transform-origin: 50% 0%;
+  animation: sway 6s ease-in-out infinite;
+}
+@utility sway-slow {
+  transform-origin: 50% 0%;
+  animation: sway 9s ease-in-out infinite reverse;
+}
+@utility breathe {
+  animation: breathe 7s ease-in-out infinite;
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-1.4deg) skewX(0.6deg); }
+  50% { transform: rotate(1.4deg) skewX(-0.6deg); }
+}
+@keyframes breathe {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.01); }
+}
+@keyframes petal-fall {
+  0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.9; }
+  50% { transform: translate3d(var(--drift, 40px), 50vh, 0) rotate(200deg); }
+  90% { opacity: 0.8; }
+  100% { transform: translate3d(calc(var(--drift, 40px) * -0.5), 110vh, 0) rotate(420deg); opacity: 0; }
+}
+@keyframes dust-float {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0; }
+  20% { opacity: 0.9; }
+  50% { transform: translate3d(8px, -40px, 0); opacity: 0.6; }
+  80% { opacity: 0.9; }
+}
+
+.petal {
+  position: absolute;
+  top: 0;
+  will-change: transform, opacity;
+  animation: petal-fall var(--dur, 14s) linear var(--delay, 0s) infinite;
+}
+.dust {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle, var(--gold-soft) 0%, var(--gold) 45%, transparent 70%);
+  will-change: transform, opacity;
+  animation: dust-float var(--dur, 8s) ease-in-out var(--delay, 0s) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .petal, .dust { display: none; }
+  .sway, .sway-slow, .breathe { animation: none; }
+}
+
+@utility drop-soft {
+  filter: drop-shadow(0 18px 22px color-mix(in oklab, var(--plum) 18%, transparent));
+}
+
+@utility fade-bottom {
+  -webkit-mask-image: linear-gradient(180deg, black 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, black 55%, transparent 100%);
+}
