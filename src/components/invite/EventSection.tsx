@@ -93,10 +93,17 @@ export function EventSection({
               </p>
             )}
 
+            {event.theme && (
+              <b><p className="mt-5 flex items-start justify-center gap-2 text-lg text-foreground">
+                <span>Theme: {event.theme}</span>
+              </p>
+              </b>
+            )}
+
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               {event.venue && (
                 <Button asChild variant="pearl" size="lg">
-                  <a href={mapsUrl(event.venue)} target="_blank" rel="noopener noreferrer">
+                  <a href={event.mapUrl} target="_blank" rel="noopener noreferrer">
                     <MapPin />
                     Directions
                   </a>

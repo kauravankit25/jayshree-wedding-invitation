@@ -6,6 +6,12 @@ import { buildInviteUrl, inviteShareMessage, sanitizeGuestName, whatsappShareUrl
 import { GoldDivider } from "./Decor";
 import { Reveal } from "./Reveal";
 
+const params = new URLSearchParams(
+  typeof window !== "undefined" ? window.location.search : ""
+);
+
+const isShare = params.get("access") || "normal";
+
 export function ShareSection({ guest, onReplay }: { guest?: string | undefined; onReplay: () => void }) {
   const [name, setName] = useState(guest ?? "");
   const [origin, setOrigin] = useState("");
@@ -41,6 +47,7 @@ export function ShareSection({ guest, onReplay }: { guest?: string | undefined; 
   };
 
   return (
+    isShare=="admin" &&
     <section id="share" className="relative scroll-mt-14 bg-dusk px-6 py-20 text-center">
       <div className="relative mx-auto max-w-md">
         <Reveal>

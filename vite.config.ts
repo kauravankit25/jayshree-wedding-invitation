@@ -8,10 +8,6 @@
 // hosting already compresses at the edge.
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
-import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import viteReact from "@vitejs/plugin-react";
-import { nitro } from "nitro/vite";
-
 
 export default defineConfig({
   tanstackStart: {
@@ -19,5 +15,4 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-   plugins: [tanstackStart(), nitro(), viteReact()],
 });
