@@ -94,23 +94,13 @@ const weddingEvents2: WeddingEvent[] = [
   },
 ]
 
-const weddingEvents1: WeddingEvent[] = [
-  {
-    id: "tilak",
-    name: "Tilak Ceremony",
-    nameHi: "तिलक",
-    date: "2026-11-30",
-    venue: "Rajmahal, Kamti Road, Gadarwara",
-    blurb: "With the sacred tilak, two families begin a lifelong bond of love and respect.",
-    image: tilakImg,
-    mapUrl: "https://maps.app.goo.gl/H9dR4uhDzAzze85A9",
-  },
+const weddingEvents1: WeddingEvent[] = [ 
   {
     id: "haldi",
     name: "Haldii and Gauri Pujan",
     nameHi: "हल्दी",
     date: "2026-12-06",
-    theme: "Orange",
+    theme: "Sky Blue",
     blurb: "A morning of turmeric, laughter and joy — colours of joy for the bride and groom.",
     image: haldiImg,
     mapUrl: "",
@@ -137,7 +127,7 @@ const weddingEvents1: WeddingEvent[] = [
   },
   {
     id: "baraat",
-    name: "Baraat",
+    name: "Wedding Ceremony",
     nameHi: "बारात",
     date: "2026-12-09",
     venue: "Rajmahal, Kamti Road, Gadarwara",

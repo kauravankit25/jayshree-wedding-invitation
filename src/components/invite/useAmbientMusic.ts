@@ -6,7 +6,7 @@ export function useAmbientMusic() {
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
-    const audio = new Audio("src/assets/india_happy-indian-wedding-490659");
+    const audio = new Audio("src/assets/india_happy-indian-wedding-490659.mp3");
     audio.loop = true;
     audio.volume = 0.5;
     audio.preload = "auto";
